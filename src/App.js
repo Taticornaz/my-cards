@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import WordList from './components/WordList';
+import AddWordForm from './components/AddWordForm';
 
-function App() {
+
+const App = () => {
+  const [words, setWords] = useState([]);
+
+  const addWord = (newWord) => {
+    setWords([
+      ...words,
+      { id: Date.now(), ...newWord }
+    ]);
+  };
+
+  const deleteWord = (id) => {
+    setWords(words.filter(word => word.id !== id));
+  };
+
+  const editWord = (id) => {
+    
+    console.log('Редактирование слова с ID:', id);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+      <AddWordForm onAdd={addWord} />
+      <WordList words={words} onEdit={editWord} onDelete={deleteWord} />
+      </main>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
