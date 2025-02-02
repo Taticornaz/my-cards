@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WordList from './components/WordList';
 import AddWordForm from './components/AddWordForm';
+import './components/styles/styles.scss';
 
 
 const App = () => {
@@ -19,17 +20,18 @@ const App = () => {
     setWords(words.filter(word => word.id !== id));
   };
 
-  const editWord = (id) => {
-    
-    console.log('Редактирование слова с ID:', id);
+  const editWord = (id, newWord, newDefinition) => {
+    setWords(words.map(word => 
+      word.id === id ? { ...word, word: newWord, definition: newDefinition } : word
+    ));
   };
 
   return (
     <div className="App">
       <Header />
       <main>
-      <AddWordForm onAdd={addWord} />
-      <WordList words={words} onEdit={editWord} onDelete={deleteWord} />
+        <AddWordForm onAdd={addWord} />
+        <WordList words={words} onDelete={deleteWord} onEdit={editWord} />
       </main>
       <Footer />
     </div>

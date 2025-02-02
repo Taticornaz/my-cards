@@ -1,0 +1,97 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$danger-color: #e74c3c;
+$bg-color: #f4f4f9;
+$border-color: #ccc;
+$font-family: 'Arial', sans-serif;
+$font-size: 16px;
+$padding: 12px;
+$border-radius: 8px;
+$transition-time: 0.3s;
+
+
+.App {
+  font-family: $font-family;
+  background-color: $bg-color;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: $primary-color;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: $padding;
+  text-align: left;
+  border: 1px solid $border-color;
+}
+
+table th {
+  background-color: $primary-color;
+  color: #fff;
+}
+
+
+button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: $padding;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all $transition-time;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: $secondary-color;
+}
+
+button:focus {
+  outline: 2px solid $primary-color;
+}
+
+button:active {
+  background-color: $danger-color;
+}
+
+
+input, textarea {
+  width: 100%;
+  padding: $padding;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  margin-bottom: 10px;
+}
+
+input:focus, textarea:focus {
+  border-color: $primary-color;
+  outline: none;
+}
+
+
+.editing td {
+  background-color: #f0f0f0;
+}
+
+.editing input {
+  border: 1px solid $secondary-color;
+}
+
+.editing button {
+  background-color: $secondary-color;
+}
