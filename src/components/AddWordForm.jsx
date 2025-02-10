@@ -2,45 +2,43 @@ import React, { useState } from 'react';
 
 const AddWordForm = ({ onAdd }) => {
   const [word, setWord] = useState('');
-  const [transcription, setTranscription] = useState('');
   const [translation, setTranslation] = useState('');
   const [topic, setTopic] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAdd({ word, transcription, translation, topic });
+    onAdd({ word, translation, topic });
     setWord('');
-    setTranscription('');
     setTranslation('');
     setTopic('');
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={word}
-        onChange={(e) => setWord(e.target.value)}
-        placeholder="Введите слово"
-      />
-      <input
-        type="text"
-        value={transcription}
-        onChange={(e) => setTranscription(e.target.value)}
-        placeholder="Транскрипция"
-      />
-      <input
-        type="text"
-        value={translation}
-        onChange={(e) => setTranslation(e.target.value)}
-        placeholder="Перевод"
-      />
-      <input
-        type="text"
-        value={topic}
-        onChange={(e) => setTopic(e.target.value)}
-        placeholder="Тема"
-      />
+      <div>
+        <label>Слово</label>
+        <input
+          type="text"
+          value={word}
+          onChange={(e) => setWord(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Перевод</label>
+        <input
+          type="text"
+          value={translation}
+          onChange={(e) => setTranslation(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Тема</label>
+        <input
+          type="text"
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
+        />
+      </div>
       <button type="submit">Добавить слово</button>
     </form>
   );

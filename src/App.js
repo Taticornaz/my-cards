@@ -5,7 +5,6 @@ import WordList from './components/WordList';
 import AddWordForm from './components/AddWordForm';
 import './components/styles/styles.scss';
 
-
 const App = () => {
   const [words, setWords] = useState([]);
 
