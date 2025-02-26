@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './WordCard.module.scss';
 const WordCard = ({ word, onEdit, onDelete }) => {
   
   const [showTranslation, setShowTranslation] = useState(false);

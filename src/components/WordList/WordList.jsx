@@ -1,6 +1,6 @@
 import React from 'react';
-import WordCard from './WordCard';
-
+import WordCard from '../WordCard/WordCard';
+import  './WordList.module.scss';
 const WordList = ({ words, onDelete, onEdit }) => {
   return (
     <div className="word-list">

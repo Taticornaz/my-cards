@@ -26,7 +26,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -44,7 +43,6 @@ table th {
   background-color: $primary-color;
   color: #fff;
 }
-
 
 button {
   background-color: $primary-color;
@@ -69,8 +67,8 @@ button:active {
   background-color: $danger-color;
 }
 
-
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: $padding;
   border: 1px solid $border-color;
@@ -78,11 +76,11 @@ input, textarea {
   margin-bottom: 10px;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border-color: $primary-color;
   outline: none;
 }
-
 
 .editing td {
   background-color: #f0f0f0;
@@ -94,4 +92,84 @@ input:focus, textarea:focus {
 
 .editing button {
   background-color: $secondary-color;
+}
+
+
+.carousel-container {
+  position: relative;
+  border: 1px solid rgb(89, 87, 87);
+  border-radius: 10px;
+  max-width: 400px;
+  height: 300px;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  font-size: 30px;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background-color $transition-time;
+  padding: 15px;
+  z-index: 10;
+
+}
+
+.carousel-container button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container button:focus {
+  outline: 2px solid $primary-color;
+}
+
+.carousel-container button:active {
+  background-color: $danger-color;
+}
+
+
+.prev {
+  left: -100px;
+}
+
+
+.next {
+  right: -100px;
+}
+
+
+.carousel-item {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.carousel-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.carousel-item.hide {
+  opacity: 0;
+  transform: translateX(-100%);
 }

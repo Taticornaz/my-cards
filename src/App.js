@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import WordList from './components/WordList';
-import AddWordForm from './components/AddWordForm';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import WordList from './components/WordList/WordList';
+import AddWordForm from './AddWordForm/AddWordForm';
+import WordCarousel from './components/WordCarousel/WordCarousel'; 
 import './components/styles/styles.scss';
 
 const App = () => {
@@ -29,8 +30,23 @@ const App = () => {
     <div className="App">
       <Header />
       <main>
+        
         <AddWordForm onAdd={addWord} />
+
+        
         <WordList words={words} onDelete={deleteWord} onEdit={editWord} />
+
+        
+        {words.length > 0 ? (
+          <WordCarousel words={words} />
+        ) : (
+          <p>No words to display</p>
+        )}
+
+
+
+
+
       </main>
       <Footer />
     </div>
