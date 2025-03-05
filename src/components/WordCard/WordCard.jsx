@@ -1,63 +1,37 @@
+// WordCard.js
 import React, { useState } from 'react';
 import './WordCard.module.scss';
-const WordCard = ({ word, onEdit, onDelete }) => {
-  
+
+const WordCard = ({ word, hideTranslationButton }) => {
   const [showTranslation, setShowTranslation] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedWord, setEditedWord] = useState(word.word);
-  const [editedDefinition, setEditedDefinition] = useState(word.definition);
 
-  
   const toggleTranslation = () => {
-    setShowTranslation(prevState => !prevState);
-  };
-
-  
-  const handleSave = () => {
-    onEdit(word.id, editedWord, editedDefinition);
-    setIsEditing(false);
-  };
-
-  
-  const handleCancel = () => {
-    setEditedWord(word.word);
-    setEditedDefinition(word.definition);
-    setIsEditing(false);
+    setShowTranslation((prevState) => !prevState);
   };
 
   return (
     <div className="word-card">
-      <h3>{isEditing ? (
-        <input
-          type="text"
-          value={editedWord}
-          onChange={(e) => setEditedWord(e.target.value)}
-        />
-      ) : word.word}</h3>
-      
+      <h3>{word.word}</h3>
       <p><strong>Тема:</strong> {word.topic}</p>
 
-      {}
-      {showTranslation ? (
+      {/* Если showTranslation истинно, показываем перевод */}
+      {showTranslation && (
         <p><strong>Перевод:</strong> {word.translation}</p>
-      ) : (
-        <button onClick={toggleTranslation}>Показать перевод</button>
       )}
 
-      {}
-      {isEditing ? (
-        <>
-          <button onClick={handleSave}>Сохранить</button>
-          <button onClick={handleCancel}>Отмена</button>
-        </>
-      ) : (
-        <>
-          <button onClick={() => setIsEditing(true)}>Редактировать</button>
-          <button onClick={() => onDelete(word.id)}>Удалить</button>
-        </>
+      {/* Если hideTranslationButton false, отображаем кнопку */}
+      {!hideTranslationButton && (
+        <button onClick={toggleTranslation}>
+          {showTranslation ? 'Скрыть перевод' : 'Показать перевод'}
+        </button>
       )}
     </div>
   );
 };
 
 export default WordCard;
+
+
+
+
+

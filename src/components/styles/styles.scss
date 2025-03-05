@@ -10,6 +10,14 @@ $border-radius: 8px;
 $transition-time: 0.3s;
 
 
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  height: 100%;
+}
+
 .App {
   font-family: $font-family;
   background-color: $bg-color;
@@ -18,6 +26,10 @@ $transition-time: 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.app-content {
+  flex-grow: 1; 
 }
 
 h1 {
@@ -97,7 +109,6 @@ textarea:focus {
 
 .carousel-container {
   position: relative;
-  border: 1px solid rgb(89, 87, 87);
   border-radius: 10px;
   max-width: 400px;
   height: 300px;
@@ -106,6 +117,7 @@ textarea:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 
@@ -172,4 +184,8 @@ textarea:focus {
 .carousel-item.hide {
   opacity: 0;
   transform: translateX(-100%);
+}
+
+main {
+  margin-top: 80px; 
 }

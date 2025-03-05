@@ -1,0 +1,37 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .not-found h1 {
+    font-size: 120px;
+    margin: 0;
+    color: #ff6347;  /* Цвет для 404 */
+  }
+  
+  .not-found h2 {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  
+  .not-found p {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .not-found a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .not-found a:hover {
+    text-decoration: underline;
+  }
