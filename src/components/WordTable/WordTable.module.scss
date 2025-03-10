@@ -17,7 +17,7 @@ form {
     padding: 10px;
     font-size: 16px;
     background-color: #4caf50;
-    color: white;
+    color: rgb(37, 35, 35);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -28,19 +28,20 @@ form {
   }
   
   
-  .word-table {
+  .wordTable {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
   }
   
-  .word-table th, .word-table td {
+  .wordTable th, .word-table td {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #e6dede;
     text-align: left;
+    color: #898d89;
   }
   
-  .word-table th {
+  .wordTable th {
     background-color: #f4f4f4;
   }
   

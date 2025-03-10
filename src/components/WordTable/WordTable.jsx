@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './WordTable.module.scss';
+import styles from './WordTable.module.scss';
 
 const WordTable = ({ words, onDelete, onSave }) => {
   const [editingWord, setEditingWord] = useState(null); 
   const [editedWord, setEditedWord] = useState({ word: '', definition: '' }); 
 
-  // Функция для начала редактирования
+  
   const handleEdit = (word) => {
     setEditingWord(word.id);
     setEditedWord({ word: word.word, definition: word.definition });
@@ -29,7 +29,7 @@ const WordTable = ({ words, onDelete, onSave }) => {
   };
 
   return (
-    <table className="word-table">
+    <table className={styles.wordTable}>
       <thead>
         <tr>
           <th>Слово</th>
